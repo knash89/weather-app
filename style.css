@@ -90,3 +90,11 @@ body {
   .temps {
     color: rgb(94, 139, 126);
   }
+
+ #footnote {
+    display: block;
+    margin: 0 auto;
+    margin-top: -40px;
+    min-width: 724px;
+    max-width: 740px;
+}
