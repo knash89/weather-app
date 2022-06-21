@@ -52,6 +52,8 @@ function onLoad() {
     iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
 
+    fahrenheitTemperature = response.data.main.temp;
+
     // convert unix sunrise/sunset
     let unixTimeSunrise = response.data.sys.sunrise * 1000;
     let convertedSunrise = new Date(unixTimeSunrise);
@@ -67,8 +69,6 @@ function onLoad() {
     let formInput = document.querySelector("#search-bar");
     formInput.reset();
   }
-  let formInput = document.querySelector("#search-bar");
-  formInput.addEventListener("submit", getPlace);
   
   function callApi(queryString, callback) {
     let units = "imperial";
@@ -85,7 +85,9 @@ function onLoad() {
       callApi(`q=${userInput}`, displayWeather);
     }
   }
-  
+  let formInput = document.querySelector("#search-bar");
+  formInput.addEventListener("submit", getPlace);
+
   function getCurrentWeather(position) {
     console.log("getCurrentWeather", position);
     let lat = position.coords.latitude;
@@ -100,20 +102,33 @@ function onLoad() {
   function getCurrentPosition() {
     navigator.geolocation.getCurrentPosition(getCurrentWeather);
   }
-  // function toFahrenheit(event) {
-  //   event.preventDefault();
-  //   let tempElement = document.querySelector("#todaysTemp");
-  //   tempElement.innerHTML = 69;
-  // }
-  // let fahrenheit = document.querySelector("#fahrenheit");
-  // fahrenheit.addEventListener("click", toFahrenheit);
-  
-  // function toCelsius(event) {
-  //   event.preventDefault();
-  //   let tempElement = document.querySelector("#todaysTemp");
-  //   tempElement.innerHTML = 21;
-  // }
-  // let celsius = document.querySelector("#celsius");
-  // celsius.addEventListener("click", toCelsius);
+
+
+  // convert to celsius
+  function convertToCelsius(event){
+    event.preventDefault();
+    let celsuisTemp = (fahrenheitTemperature - 32) * 5 / 9;
+    let tempElement = document.querySelector("#todaysTemp") 
+    tempElement.innerHTML = Math.round(celsuisTemp)
+    fahrenheitLink.classList.remove("active");
+    celsiusLink.classList.add("active");
+  }
+  let fahrenheitTemperature = null;
+
+  let celsiusLink = document.querySelector("#celsius-link")
+  celsiusLink.addEventListener("click", convertToCelsius);
+
+//  convert to fahrenheit
+function convertToFahrenheit(event){
+  event.preventDefault();
+  let tempElement = document.querySelector("#todaysTemp")
+  tempElement.innerHTML = Math.round(fahrenheitTemperature)
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link")
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
   
 
