@@ -57,11 +57,14 @@ body {
     font-size: 30px;
     padding: 25px 20px;
   }
-  #description {
-    font-size: 20px;
+  #description:first-letter {
     text-transform: capitalize;
   }
   
+  #description {
+    font-size: 20px;
+  }
+
   .conditions {
     color: rgb(47, 93, 98);
     padding: 20px 0px;
@@ -97,4 +100,5 @@ body {
     margin-top: -40px;
     min-width: 724px;
     max-width: 740px;
+    
 }

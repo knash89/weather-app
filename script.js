@@ -18,12 +18,16 @@ function onLoad() {
     ];
     let day = days[now.getDay()];
     let hour = now.getHours();
+    if (hour < 10) {
+      hour = `0${hour}`;
+    }
     let minute = now.getMinutes();
     if (minute < 10) {
-      minute = "0" + minute;
+      minute = `0${minute}`;
     }
     time.innerHTML = ` Last Updated: ${day} ${hour}:${minute}`;
   }
+
   if (document.readyState === "loading") {
     // if Loading hasn't finished yet
     document.addEventListener("DOMContentLoaded", onLoad);
@@ -34,8 +38,6 @@ function onLoad() {
   
   // update location weather details with user input search
   function displayWeather(response) {
-    console.log("displayWeather", response);
-  
     let location = document.querySelector("#place");
     location.innerHTML = response.data.name;
     let currentTemp = document.querySelector("#todaysTemp");
@@ -46,6 +48,10 @@ function onLoad() {
     humidity.innerHTML = response.data.main.humidity;
     let wind = document.querySelector("#wind");
     wind.innerHTML = Math.round(response.data.wind.speed);
+    let iconElement = document.querySelector("#icon")
+    iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("alt", response.data.weather[0].description);
+
     // convert unix sunrise/sunset
     let unixTimeSunrise = response.data.sys.sunrise * 1000;
     let convertedSunrise = new Date(unixTimeSunrise);
