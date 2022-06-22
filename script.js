@@ -52,6 +52,9 @@ function onLoad() {
     let iconElement = document.querySelector("#icon")
     iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
+    // reset searchbox after submit
+    let formInput = document.querySelector("#search-bar");
+    formInput.reset();
 
     fahrenheitTemperature = response.data.main.temp;
   }
@@ -75,7 +78,6 @@ function onLoad() {
   formInput.addEventListener("submit", getPlace);
 
   function getCurrentWeather(position) {
-    console.log("getCurrentWeather", position);
     let lat = position.coords.latitude;
     let long = position.coords.longitude;
     callApi(`lat=${lat}&lon=${long}`, displayWeather);

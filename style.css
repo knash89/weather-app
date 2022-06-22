@@ -31,11 +31,7 @@ body {
     border-radius: 5px;
     padding: 5px;
   }
-  #current:hover {
-    background-color: rgb(47, 93, 98);
-    color: white;
-  }
-  .btn:hover {
+  #current:hover,.btn:hover {
     background-color: rgb(47, 93, 98);
     color: white;
   }
