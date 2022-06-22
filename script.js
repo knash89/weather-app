@@ -38,6 +38,7 @@ function onLoad() {
   
   // update location weather details with user input search
   function displayWeather(response) {
+    console.log(response)
     let location = document.querySelector("#place");
     location.innerHTML = response.data.name;
     let currentTemp = document.querySelector("#todaysTemp");
@@ -53,21 +54,6 @@ function onLoad() {
     iconElement.setAttribute("alt", response.data.weather[0].description);
 
     fahrenheitTemperature = response.data.main.temp;
-
-    // convert unix sunrise/sunset
-    let unixTimeSunrise = response.data.sys.sunrise * 1000;
-    let convertedSunrise = new Date(unixTimeSunrise);
-    let humanDateSunrise = convertedSunrise.toLocaleTimeString("en-us");
-    let unixTimeSunset = response.data.sys.sunset * 1000;
-    let convertedSunset = new Date(unixTimeSunset);
-    let humanDateSunset = convertedSunset.toLocaleTimeString("en-us");
-    let sunrise = document.querySelector("#sunrise");
-    sunrise.innerHTML = humanDateSunrise;
-    let sunset = document.querySelector("#sunset");
-    sunset.innerHTML = humanDateSunset;
-    // reset searchbox after submit
-    let formInput = document.querySelector("#search-bar");
-    formInput.reset();
   }
   
   function callApi(queryString, callback) {

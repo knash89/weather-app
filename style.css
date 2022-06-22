@@ -9,8 +9,8 @@ body {
     display: block;
     margin: 50px auto;
     background: rgb(223, 238, 234);
-    min-width: 724px;
-    max-width: 740px;
+    min-width: 535px;
+    max-width: 635px;
   }
   
   #info,
@@ -55,7 +55,7 @@ body {
   .today {
     color: rgb(47, 93, 98);
     font-size: 30px;
-    padding: 25px 20px;
+    padding: 20px 20px;
   }
   #description:first-letter {
     text-transform: capitalize;
@@ -67,7 +67,7 @@ body {
 
   .conditions {
     color: rgb(47, 93, 98);
-    padding: 20px 0px;
+    padding: 25px 0px;
     line-height: 15px;
   }
   
@@ -108,7 +108,7 @@ body {
     display: block;
     margin: 0 auto;
     margin-top: -40px;
-    min-width: 724px;
-    max-width: 740px;
+    min-width: 535px;
+    max-width: 635px;
     
 }
