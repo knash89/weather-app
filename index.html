@@ -20,7 +20,7 @@
         <form id="search-bar">
             <div class="row justify-content-end">
                 <div class="col-6">
-                    <button id="current" type="button">Current Location <i class="bi bi-geo-alt"></i></button>
+                    <button id="current" type="button">Current Location </button>
                 </div>
                 <div class="col-6 form-search">
                     <div class="input-group mb-3 search">
@@ -35,8 +35,8 @@
         </form>
         <div class="row" id="info">
             <div class="col-12">
-                <p id="place">...</p>
-                <p id="local"><i class="bi bi-clock"></i><span id="dayTime"> Last Updated: </span></p>
+                <div id="place">...</div>
+                <div id="local"><span id="dayTime"> Last Updated: </span></div>
             </div>
             <div class="col-5 today">
                 <img src="sun.png" width="50" id="icon" alt="" />
@@ -48,36 +48,43 @@
             </div>
             <div class="col-6 conditions">
                 <p><strong>Humidity:</strong> <span id="humid">0</span>&percnt;</p>
-                <p><strong>Wind:</strong> <span id="wind">0</span>mph</p>
+                <p><strong>Wind: </strong> <span id="wind">0</span>mph</p>
             </div>
         </div>
-        <div class="row justify-content-center" id="dow">
-            <div class="col text-center">
-                <span class="days">Tuesday</span>
-                <img src="cloudy.png" width="40" />
-                <p class="temps"><strong>75&ring;</strong> 56&ring;</p>
+        <div id="forecast-box">
+            <!-- <div class="row justify-content-center" id="forecast">
+                <div class="col text-center">
+                    <div class="days">Wednesday</div>
+                    <div><img src="cloudy.png" width="40" /></div>
+                    <span class="hiLowTemps"><strong>83&ring;</strong></span>
+                    <span class="hiLowTemps">64&ring;</span>
+                </div> -->
+            <!-- <div class="col text-center">
+                <div class="days">Thursday</div>
+                <div><img src="cloudy.png" width="40" /></div>
+                <span class="hiLowTemps"><strong>85&ring;</strong></span>
+                <span class="hiLowTemps">63&ring;</span>
             </div>
             <div class="col text-center">
-                <span class="days">Wednesday</span>
-                <img src="cloudy.png" width="40" />
-                <p class="temps"><strong>66&ring;</strong> 70&ring;</p>
+                <div class="days">Friday</div>
+                <div><img src="cloudy.png" width="40" /></div>
+                <span class="hiLowTemps"><strong>85&ring;</strong></span>
+                <span class="hiLowTemps">62&ring;</span>
             </div>
             <div class="col text-center">
-                <span class="days">Thursday</span>
-                <img src="cloudy.png" width="40" />
-                <p class="temps"><strong>66&ring;</strong> 53&ring;</p>
+                <div class="days">Saturday</div>
+                <div><img src="sun.png" width="40" /></div>
+                <span class="hiLowTemps"><strong>79&ring;</strong></span>
+                <span class="hiLowTemps">63&ring;</span>
             </div>
             <div class="col text-center">
-                <span class="days">Friday</span>
-                <img src="sun.png" width="40" />
-                <p class="temps"><strong>70&ring;</strong> 54&ring;</p>
-            </div>
-            <div class="col text-center">
-                <span class="days">Saturday</span>
-                <img src="sun.png" width="40" />
-                <p class="temps"><strong>75&ring;</strong> 56&ring;</p>
-            </div>
+                <div class="days">Sunday</div>
+                <div><img src="sun.png" width="40" /></div>
+                <span class="hiLowTemps"><strong>80&ring;</strong></span>
+                <span class="hiLowTemps">64&ring;</span>
+            </div> -->
         </div>
+    </div>
     </div>
     <footer>
         <small id="footnote"><a href="https://github.com/knash89/weather-app">Open source code</a> by Katie Nash</small>

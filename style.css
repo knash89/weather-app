@@ -14,10 +14,11 @@ body {
   }
   
   #info,
-  #dow {
+  #forecast {
     background-color: rgb(255, 255, 255, 0.6);
     margin-top: 10px;
     padding-top: 10px;
+    padding-bottom: 10px;
     border-radius: 10px;
   }
   
@@ -96,7 +97,7 @@ body {
   }
   
   .days,
-  .temps {
+  .hiLowTemps {
     color: rgb(94, 139, 126);
   }
 
