@@ -51,7 +51,7 @@ function onLoad() {
     let wind = document.querySelector("#wind");
     wind.innerHTML = Math.round(response.data.wind.speed);
     let iconElement = document.querySelector("#icon")
-    iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("src",`src/${response.data.weather[0].icon}.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
 
     getForecast(response.data.coord);
@@ -147,7 +147,7 @@ function displayForecast(response){
     forecastHTML += `
   <div class="col text-center">
   <div class="days">${formatDay(forecastDay.dt)}</div>
-  <div><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="40" /></div>
+  <div><img src="src/${forecastDay.weather[0].icon}.png" alt="" width="40" /></div>
   <span class="hiLowTemps"><strong>${Math.round(forecastDay.temp.max)}&ring;</strong></span>
   <span class="hiLowTemps">${Math.round(forecastDay.temp.min)}&ring;</span>
   </div>`

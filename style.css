@@ -82,7 +82,7 @@ body {
     /* color: rgb(47, 93, 98); */
   }
 
-  .today .active {
+  .today .active{
     color: rgb(47, 93, 98);
     cursor: default;
   }
